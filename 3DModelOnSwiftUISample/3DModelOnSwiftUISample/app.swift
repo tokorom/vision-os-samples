@@ -14,6 +14,5 @@ struct app: App {
             ContentView()
         }
         .windowStyle(.volumetric)
-        .defaultSize(width: 600, height: 600, depth: 600)
     }
 }
