@@ -13,6 +13,14 @@ struct ContentView: View {
         // 3D Model by J CUBE Inc. - Maneki USDZ for AR / CC BY 4.0
         // https://j-cube.jp/solutions/multiverse/assets/
         // https://creativecommons.org/licenses/by-sa/4.0/
-        Model3D(named: "maneki")
+        Model3D(named: "maneki") { phase in
+            if let model = phase.model {
+                model
+            } else if let error = phase.error {
+                Text(error.localizedDescription)
+            } else {
+                Text("other reasons...")
+            }
+        }
     }
 }
