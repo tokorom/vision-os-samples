@@ -8,10 +8,12 @@
 import SwiftUI
 
 @main
-struct _DModelOnSwiftUISampleApp: App {
+struct app: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+        .windowStyle(.volumetric)
+        .defaultSize(width: 600, height: 600, depth: 600)
     }
 }

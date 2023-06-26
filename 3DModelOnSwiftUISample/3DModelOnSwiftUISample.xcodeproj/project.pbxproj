@@ -7,19 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F36039022A4974BE009A0B3A /* _DModelOnSwiftUISampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36039012A4974BE009A0B3A /* _DModelOnSwiftUISampleApp.swift */; };
 		F36039042A4974BE009A0B3A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36039032A4974BE009A0B3A /* ContentView.swift */; };
 		F36039062A4974BF009A0B3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36039052A4974BF009A0B3A /* Assets.xcassets */; };
 		F360390A2A4974BF009A0B3A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36039092A4974BF009A0B3A /* Preview Assets.xcassets */; };
+		F36039112A497782009A0B3A /* app.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36039102A497782009A0B3A /* app.swift */; };
+		F36039132A4979F7009A0B3A /* maneki.usdz in Resources */ = {isa = PBXBuildFile; fileRef = F36039122A4979F6009A0B3A /* maneki.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F36038FE2A4974BE009A0B3A /* 3DModelOnSwiftUISample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 3DModelOnSwiftUISample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F36039012A4974BE009A0B3A /* _DModelOnSwiftUISampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _DModelOnSwiftUISampleApp.swift; sourceTree = "<group>"; };
+		F36038FE2A4974BE009A0B3A /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F36039032A4974BE009A0B3A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F36039052A4974BF009A0B3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F36039072A4974BF009A0B3A /* _DModelOnSwiftUISample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = _DModelOnSwiftUISample.entitlements; sourceTree = "<group>"; };
 		F36039092A4974BF009A0B3A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F36039102A497782009A0B3A /* app.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = app.swift; sourceTree = "<group>"; };
+		F36039122A4979F6009A0B3A /* maneki.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = maneki.usdz; sourceTree = "<group>"; };
+		F36039142A497B6C009A0B3A /* app-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "app-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +39,7 @@
 		F36038F52A4974BE009A0B3A = {
 			isa = PBXGroup;
 			children = (
+				F36039142A497B6C009A0B3A /* app-Info.plist */,
 				F36039002A4974BE009A0B3A /* 3DModelOnSwiftUISample */,
 				F36038FF2A4974BE009A0B3A /* Products */,
 			);
@@ -44,7 +48,7 @@
 		F36038FF2A4974BE009A0B3A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F36038FE2A4974BE009A0B3A /* 3DModelOnSwiftUISample.app */,
+				F36038FE2A4974BE009A0B3A /* app.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -52,8 +56,9 @@
 		F36039002A4974BE009A0B3A /* 3DModelOnSwiftUISample */ = {
 			isa = PBXGroup;
 			children = (
-				F36039012A4974BE009A0B3A /* _DModelOnSwiftUISampleApp.swift */,
+				F36039102A497782009A0B3A /* app.swift */,
 				F36039032A4974BE009A0B3A /* ContentView.swift */,
+				F36039122A4979F6009A0B3A /* maneki.usdz */,
 				F36039052A4974BF009A0B3A /* Assets.xcassets */,
 				F36039072A4974BF009A0B3A /* _DModelOnSwiftUISample.entitlements */,
 				F36039082A4974BF009A0B3A /* Preview Content */,
@@ -72,9 +77,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F36038FD2A4974BE009A0B3A /* 3DModelOnSwiftUISample */ = {
+		F36038FD2A4974BE009A0B3A /* app */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F360390D2A4974BF009A0B3A /* Build configuration list for PBXNativeTarget "3DModelOnSwiftUISample" */;
+			buildConfigurationList = F360390D2A4974BF009A0B3A /* Build configuration list for PBXNativeTarget "app" */;
 			buildPhases = (
 				F36038FA2A4974BE009A0B3A /* Sources */,
 				F36038FB2A4974BE009A0B3A /* Frameworks */,
@@ -84,9 +89,9 @@
 			);
 			dependencies = (
 			);
-			name = 3DModelOnSwiftUISample;
+			name = app;
 			productName = 3DModelOnSwiftUISample;
-			productReference = F36038FE2A4974BE009A0B3A /* 3DModelOnSwiftUISample.app */;
+			productReference = F36038FE2A4974BE009A0B3A /* app.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -117,7 +122,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F36038FD2A4974BE009A0B3A /* 3DModelOnSwiftUISample */,
+				F36038FD2A4974BE009A0B3A /* app */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +133,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F360390A2A4974BF009A0B3A /* Preview Assets.xcassets in Resources */,
+				F36039132A4979F7009A0B3A /* maneki.usdz in Resources */,
 				F36039062A4974BF009A0B3A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,7 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F36039042A4974BE009A0B3A /* ContentView.swift in Sources */,
-				F36039022A4974BE009A0B3A /* _DModelOnSwiftUISampleApp.swift in Sources */,
+				F36039112A497782009A0B3A /* app.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +280,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "app-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -292,13 +299,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "work.spinners.sample.-DModelOnSwiftUISample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -315,6 +322,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "app-Info.plist";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -333,13 +341,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "work.spinners.sample.-DModelOnSwiftUISample";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -355,7 +363,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F360390D2A4974BF009A0B3A /* Build configuration list for PBXNativeTarget "3DModelOnSwiftUISample" */ = {
+		F360390D2A4974BF009A0B3A /* Build configuration list for PBXNativeTarget "app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F360390E2A4974BF009A0B3A /* Debug */,
