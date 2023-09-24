@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct FullSpaceSampleApp: App {
+    @State private var immersionStyle: ImmersionStyle = .full
+    
     var body: some Scene {
-        WindowGroup {
+        WindowGroup("hello", id: "main") {
             ContentView()
         }
+        .windowStyle(.plain)
+        
+        ImmersiveSpace(id: "full") {
+            FullSpaceView()
+        }
+        .immersionStyle(selection: $immersionStyle, in: .full)
     }
 }

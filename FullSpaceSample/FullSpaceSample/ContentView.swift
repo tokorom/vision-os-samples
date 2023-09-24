@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.openImmersiveSpace) private var openImmersiveSpace
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button {
+                Task {
+                    await openImmersiveSpace(id: "full")
+                }
+            } label: {
+                Text("Open Full Space")
+            }
         }
         .padding()
     }
