@@ -16,6 +16,6 @@ struct PlaneDetectionSampleApp: App {
 
         ImmersiveSpace(id: "ImmersiveSpace") {
             ImmersiveView()
-        }.immersionStyle(selection: .constant(.full), in: .full)
+        }
     }
 }
