@@ -31,8 +31,6 @@ extension ImmersiveView {
     final class ViewModel {
         lazy var contentEntity = Entity()
 
-        private var entities: [UUID: Entity] = [:]
-
         private let session = ARKitSession()
         private let planeData = PlaneDetectionProvider(alignments: [.horizontal, .vertical])
 
@@ -45,29 +43,50 @@ extension ImmersiveView {
                 switch update.event {
                 case .added, .updated:
                     Task {
-                        await updateAnchor(anchor)
+                        try await updateAnchor(anchor)
                     }
                 case .removed:
                     Task {
-                        await removeAnchor(anchor)
+                        try await removeAnchor(anchor)
                     }
                 }
             }
         }
 
-        @MainActor private func updateAnchor(_ anchor: PlaneAnchor) {
-            if entities[anchor.id] == nil {
+        @MainActor private func updateAnchor(_ anchor: PlaneAnchor) async throws {
+            let name = "PlaneAnchor-\(anchor.id)"
+
+            if let anchorEntity = contentEntity.findEntity(named: name) {
+                if let modelEntity = anchorEntity.findEntity(named: "model") {
+                    modelEntity.transform = Transform(matrix: anchor.geometry.extent.anchorFromExtentTransform)
+                }
+                anchorEntity.transform = Transform(matrix: anchor.originFromAnchorTransform)
+            } else {
+                // let anchorEntity = AnchorEntity(world: anchor.originFromAnchorTransform)
+                // let anchorEntity = AnchorEntity(world: anchor.geometry.extent.anchorFromExtentTransform)
+
                 let material = UnlitMaterial(color: anchor.classification.color)
-                let entity = ModelEntity(mesh: .generatePlane(width: anchor.geometry.extent.width, depth: anchor.geometry.extent.height), materials: [material])
-                entities[anchor.id] = entity
-                contentEntity.addChild(entity)
+                let modelEntity = ModelEntity(mesh: .generatePlane(width: anchor.geometry.extent.width, height: anchor.geometry.extent.height), materials: [material])
+                modelEntity.name = "model"
+                modelEntity.transform = Transform(matrix: anchor.geometry.extent.anchorFromExtentTransform)
+
+                let textEntity = ModelEntity(mesh: .generateText(anchor.classification.description))
+                textEntity.scale = SIMD3(0.01, 0.01, 0.01)
+                modelEntity.addChild(textEntity)
+
+                let anchorEntity = Entity()
+                anchorEntity.transform = Transform(matrix: anchor.originFromAnchorTransform)
+                anchorEntity.name = name
+                anchorEntity.addChild(modelEntity)
+                contentEntity.addChild(anchorEntity)
             }
-            entities[anchor.id]?.transform = Transform(matrix: anchor.originFromAnchorTransform)
         }
 
-        @MainActor private func removeAnchor(_ anchor: PlaneAnchor) {
-            entities[anchor.id]?.removeFromParent()
-            entities.removeValue(forKey: anchor.id)
+        @MainActor private func removeAnchor(_ anchor: PlaneAnchor) async throws {
+            let name = "PlaneAnchor-\(anchor.id)"
+            if let anchorEntity = contentEntity.findEntity(named: name) {
+                anchorEntity.removeFromParent()
+            }
         }
     }
 }
